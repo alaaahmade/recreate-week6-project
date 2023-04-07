@@ -1,0 +1,8 @@
+const express = require('express');
+const getheadPhone = require('./middlewares/headphone');
+
+const headphoneRouter = express.Router();
+
+headphoneRouter.get('/headphones', getheadPhone);
+
+module.exports = headphoneRouter;
