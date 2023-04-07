@@ -1,12 +1,20 @@
 BEGIN;
 
-DROP TABLE IF EXISTS products, catogry CASCADE;
+DROP TABLE IF EXISTS products, catogry, cart CASCADE;
 
 CREATE TABLE catogry (
     id SERIAL PRIMARY KEY,
     catogrys VARCHAR(100) NOT NULL
 );
 CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    img text NOT NULL,
+    catogry_id INTEGER NOT NULL REFERENCES catogry(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    name VARCHAR(50) NOT NULL,
+    discreption TEXT ,
+    price INTEGER NOT NULL
+);
+CREATE TABLE cart (
     id SERIAL PRIMARY KEY,
     img text NOT NULL,
     catogry_id INTEGER NOT NULL REFERENCES catogry(id) ON DELETE CASCADE ON UPDATE CASCADE,
