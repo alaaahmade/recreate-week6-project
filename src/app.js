@@ -6,6 +6,8 @@ const phoneRouter = require('./routers/phonerouter');
 const TVRouter = require('./routers/TVRouter');
 const headphoneRouter = require('./routers/headphoneRouter');
 const postrouter = require('./routers/postrouter');
+const cartRouter = require('./routers/addtoCart');
+const GetAllRouter = require('./routers/getAllRouter');
 
 const PORT = process.env.PORT || 3000;
 
@@ -19,4 +21,6 @@ app.use('/products', phoneRouter);
 app.use('/products', TVRouter);
 app.use('/products', headphoneRouter);
 app.use('/products', postrouter);
+app.use('/products', cartRouter);
+app.use('/products', GetAllRouter);
 module.exports = app;
